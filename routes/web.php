@@ -19,10 +19,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/todolist-app', function () {
     return view('todo.index');
-});
+})->name('index');
 
 Route::get('/todolist', function() {
     return view('todo.todolist');
-});
+})->name('todolist');
 
 require __DIR__.'/auth.php';
