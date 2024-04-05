@@ -1,6 +1,6 @@
 <x-layout title="TOP | Todoアプリ">
     <x-layout.single>
-        <h1 class="text-center text-green-500 text-4xl font-bold mt-8 mb-8">
+        <h1 class="text-center text-green-500 xl:text-6xl sm:text-4xl text-4xl font-bold mt-8 mb-8">
             Todoアプリ
         </h1>
         <div class="flex flex-wrap justify-center">
