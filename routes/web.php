@@ -17,6 +17,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/todolist', \App\Http\Controllers\Todo\IndexController::class);
+Route::get('/todolist-app', function () {
+    return view('todo.index');
+});
+
+Route::get('/todolist', function() {
+    return view('todo.todolist');
+});
 
 require __DIR__.'/auth.php';
