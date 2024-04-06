@@ -1,7 +1,7 @@
 <x-layout title="リスト | Todoアプリ">
-    <x-layout.listsingle>
+    <x-layout.todolist-single>
             <ul class=" font-medium justify-start w-max">
-                <li class="flex sticky top-10 lg:col-span-1 justify-start text-xl bg-gray-100 border-b-4 border-gray-500">
+                <li class="flex sticky top-10 mb-4 lg:col-span-1 justify-start text-xl bg-gray-100 border-b-4 border-gray-500">
                     <div class="flex w-8">
                     </div>
                     <div class="flex ml-3 w-96">
@@ -43,10 +43,10 @@
                 @endfor
                 <li class="flex flex-wrap sticky bottom-6 lg:col-span-1 justify-center items-center text-xl bg-gray-100 border-t-4 border-gray-500">
                     <div class="flex flex-wrap w-1/2 p-2 justify-evenly">
-                        <x-element.button-a :href="route('index')">Todo登録</x-element.button-a>
-                        <x-element.button-a :href="route('index')" theme="secondary">Todo復元</x-element.button-a>
+                        <x-element.button-a :href="route('addtodo')">Todo登録</x-element.button-a>
+                        <x-element.button-a :href="route('restoretodo')" theme="secondary">Todo復元</x-element.button-a>
                     </div>
                 </li>
             </ul>
-    </x-layout.listsingle>
+    </x-layout.todolist-single>
 </x-layout>

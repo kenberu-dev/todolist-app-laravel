@@ -25,4 +25,28 @@ Route::get('/todolist', function() {
     return view('todo.todolist');
 })->name('todolist');
 
+Route::get('addtodo', function() {
+    return view('todo.addtodo');
+})->name('addtodo');
+
+Route::get('edittodo', function() {
+    return view('todo.edittodo');
+})->name('edittodo');
+
+Route::get('adminlogin', function() {
+    return view('todo.adminlogin');
+})->name('adminlogin');
+
+Route::get('userlist', function() {
+    return view('todo.userlist');
+})->name('userlist');
+
+Route::get('restoretodo', function() {
+    return view('todo.restoretodo');
+})->name('restoretodo');
+
+Route::get('userinfo', function() {
+    return view('todo.userinfo');
+})->name('userinfo');
+
 require __DIR__.'/auth.php';

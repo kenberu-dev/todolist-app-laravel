@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Todo;
+namespace App\Http\Controllers\Todolist;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class UserlistController extends Controller
 {
     /**
      * Handle the incoming request.
      */
     public function __invoke(Request $request)
     {
-        return view('Todo.index');
+        return view('userlist');
     }
 }
