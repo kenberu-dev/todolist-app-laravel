@@ -6,14 +6,14 @@
             </div>
             <div class="items-start">
                 <div class="flex items-center">
-                    <div class="text-xl w-28">ユーザー名</div>
-                    <div class="ml-4 text-xl dark:bg-gray-900 dark:text-gray-300">
-                        User Name
+                    <div class="flex text-xl max-w-36 w-full">ユーザー名</div>
+                    <div class="flex ml-4 text-xl">
+                        UserName
                     </div>
                 </div>
                 <div class="flex items-center">
-                    <div class="text-xl w-28">メールアドレス</div>
-                    <div class="ml-4 text-xl dark:bg-gray-900 dark:text-gray-300">
+                    <div class="flex text-xl max-w-36 w-full">メールアドレス</div>
+                    <div class="flex ml-4 text-xl">
                         user@example.com
                     </div>
                 </div>
