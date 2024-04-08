@@ -4,7 +4,6 @@ namespace App\Http\Requests\Todolist;
 
 use DateTime;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Date;
 
 class AddTodoRequest extends FormRequest
 {
@@ -32,7 +31,7 @@ class AddTodoRequest extends FormRequest
         return $this->input('content');
     }
 
-    public function deadline():Date {
+    public function deadline(): string {
         return $this->input('deadline');
     }
 }
