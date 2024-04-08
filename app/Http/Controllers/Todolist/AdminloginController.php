@@ -12,6 +12,6 @@ class AdminloginController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('adminlogin');
+        return view('todo.adminlogin');
     }
 }

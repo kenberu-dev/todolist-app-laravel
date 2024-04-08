@@ -1,5 +1,5 @@
 <x-layout title="Todo編集 | Todoアプリ">
-    <x-layout.listsingle>
+    <x-layout.todolist-single>
         <form method="POST" action="{{ route('login') }}" class="justfy-center">
             <div class="flex flex-col justify-center">
                 <div class="flex justify-center mb-4 text-4xl font-extralight text-green-500">Todoを編集</div>
@@ -19,5 +19,5 @@
                 </div>
             </div>
         </form>
-    </x-layout.listsingle>
+    </x-layout.todolist-single>
 </x-layout>

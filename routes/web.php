@@ -21,32 +21,28 @@ Route::get('/todolist-app', function () {
     return view('todo.index');
 })->name('index');
 
-Route::get('/todolist', function() {
-    return view('todo.todolist');
-})->name('todolist');
+Route::get('/todolist', \App\Http\Controllers\Todolist\TodolistController::class)
+->name('todolist');
 
-Route::get('addtodo', function() {
-    return view('todo.addtodo');
-})->name('addtodo');
+Route::get('addtodo-page',\App\Http\Controllers\Todolist\AddTodoPageController::class)
+->name('addtodo-page');
 
-Route::get('edittodo', function() {
-    return view('todo.edittodo');
-})->name('edittodo');
+Route::post('todo/addtodo',\App\Http\Controllers\Todolist\AddTodoController::class)
+->name('addtodo');
 
-Route::get('adminlogin', function() {
-    return view('todo.adminlogin');
-})->name('adminlogin');
+Route::get('edittodo', \App\Http\Controllers\Todolist\EditTodoController::class)
+->name('edittodo');
 
-Route::get('userlist', function() {
-    return view('todo.userlist');
-})->name('userlist');
+Route::get('adminlogin', App\Http\Controllers\Todolist\AdminloginController::class)
+->name('adminlogin');
 
-Route::get('restoretodo', function() {
-    return view('todo.restoretodo');
-})->name('restoretodo');
+Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
+->name('userlist');
 
-Route::get('userinfo', function() {
-    return view('todo.userinfo');
-})->name('userinfo');
+Route::get('restoretodo', App\Http\Controllers\Todolist\RestoreTodo::class)
+->name('restoretodo');
+
+Route::get('userinfo', App\Http\Controllers\Todolist\UserInfoController::class)
+->name('userinfo');
 
 require __DIR__.'/auth.php';

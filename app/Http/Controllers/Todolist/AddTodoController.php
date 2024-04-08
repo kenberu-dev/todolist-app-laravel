@@ -3,15 +3,20 @@
 namespace App\Http\Controllers\Todolist;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Todolist\AddTodoRequest;
+use App\Models\Todolist;
 
 class AddTodoController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(AddTodoRequest $request)
     {
-        return view('addtodo');
+        $todo = new Todolist();
+        $todo->content = $request->content();
+        $todo->deadline = $request->deadline();
+        $todo->save();
+        return redirect()->route('todolist');
     }
 }

@@ -17,22 +17,22 @@
                         
                     </div>
                 </li>
-                @for ($i=0;$i<20;$i++)
+                @foreach($todolists as $todo)
                 <li class="flex lg:col-span-1 items-center justify-start mb-4">
                     <div class="flex items-center">
                         <input id="default-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="default-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"></label>
                     </div>
                     <p class="ml-3 text-xl w-96 text-gray-600">
-                        This is Todo Content...
+                        {{ $todo->content }}
                     </p>
                     <p class="ml-3 text-xl w-32 text-gray-600">
-                        YYYY/MM/DD
+                        {{ $todo->deadline }}
                     </p>
-                    <x-element.button-list>
+                    <x-element.button-list :href="route('edittodo')">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                          </svg>                          
+                            </svg>
                     </x-element.button-list>
                     <x-element.button-list theme="secondary">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
@@ -40,10 +40,10 @@
                           </svg>                          
                     </x-element.button-list>
                 </li>
-                @endfor
+                @endforeach
                 <li class="flex flex-wrap sticky bottom-6 lg:col-span-1 justify-center items-center text-xl bg-gray-100 border-t-4 border-gray-500">
                     <div class="flex flex-wrap w-1/2 p-2 justify-evenly">
-                        <x-element.button-a :href="route('addtodo')">Todo登録</x-element.button-a>
+                        <x-element.button-a :href="route('addtodo-page')">Todo登録</x-element.button-a>
                         <x-element.button-a :href="route('restoretodo')" theme="secondary">Todo復元</x-element.button-a>
                     </div>
                 </li>

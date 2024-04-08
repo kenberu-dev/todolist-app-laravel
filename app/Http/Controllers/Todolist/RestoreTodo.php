@@ -12,6 +12,6 @@ class RestoreTodo extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('restoretodo');
+        return view('todo.restoretodo');
     }
 }

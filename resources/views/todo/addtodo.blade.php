@@ -1,19 +1,25 @@
 <x-layout title="Todo追加 | Todoアプリ">
     <x-layout.todolist-single>
-        <form method="POST" action="{{ route('login') }}" class="justfy-center">
+        <form method="POST" action="{{ route('addtodo') }}" class="justfy-center">
             <div class="flex flex-col justify-center">
                 <div class="flex justify-center mb-4 text-4xl font-extralight text-green-500">Todo追加</div>
                 @csrf
 
                 <div class="flex justify-center items-center">
                     <div class="text-xl w-20">Todo</div>
-                    <input type="text" class="w-96 ml-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm">
+                    <input type="text" name="content" placeholder="Todoを入力" class="w-96 ml-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm">
+                    @error('content')
+                        <p style="color: red">{{ $message }}</p>
+                    @enderror
                 </div>
-
                 <div class="flex justify-center items-center mt-4">
                     <div class="flex text-xl w-20">期限</div>
-                    <input type="text" class="flex w-96 ml-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm">
+                    <input type="text" name="deadline" placeholder="YYYY-MM-DD" class="flex w-96 ml-4 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm">
+                    @error('deadline')
+                        <p style="color: red">{{ $message }}</p>
+                    @enderror
                 </div>
+                
                 <div class="flex mt-4 justify-center">
                     <x-element.button>追　加</x-element.button>
                 </div>
