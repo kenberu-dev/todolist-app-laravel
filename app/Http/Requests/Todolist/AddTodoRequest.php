@@ -4,6 +4,7 @@ namespace App\Http\Requests\Todolist;
 
 use DateTime;
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class AddTodoRequest extends FormRequest
 {
@@ -23,8 +24,13 @@ class AddTodoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'content'  => 'required',
+            'deadline' => 'required|date',
         ];
+    }
+
+    public function userId() : int {
+        return $this->user()->id;
     }
 
     public function content(): string {

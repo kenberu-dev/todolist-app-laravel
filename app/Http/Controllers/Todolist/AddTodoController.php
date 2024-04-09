@@ -15,6 +15,7 @@ class AddTodoController extends Controller
     public function __invoke(AddTodoRequest $request)
     {
         $todo = new Todolist();
+        $todo->user_id = $request->userId();
         $todo->content = $request->content();
         $todo->deadline = $request->deadline();
         $todo->save();

@@ -17,32 +17,36 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/todolist-app', function () {
-    return view('todo.index');
-})->name('index');
-
-Route::get('/todolist', \App\Http\Controllers\Todolist\TodolistController::class)
-->name('todolist');
-
-Route::get('addtodo-page',\App\Http\Controllers\Todolist\AddTodoPageController::class)
-->name('addtodo-page');
-
-Route::post('todo/addtodo',\App\Http\Controllers\Todolist\AddTodoController::class)
-->name('addtodo');
-
-Route::get('edittodo', \App\Http\Controllers\Todolist\EditTodoController::class)
-->name('edittodo');
+Route::get('/todolist-app', \App\Http\Controllers\Todolist\IndexController::class)
+->name('index');
 
 Route::get('adminlogin', App\Http\Controllers\Todolist\AdminloginController::class)
 ->name('adminlogin');
 
-Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
-->name('userlist');
+Route::middleware('auth')->group(function (){
+    Route::get('todolist', \App\Http\Controllers\Todolist\TodolistController::class)
+    ->name('todolist');
+    
+    Route::get('addtodo-page',\App\Http\Controllers\Todolist\AddTodoPageController::class)
+    ->name('addtodo-page');
+    
+    Route::post('todo/addtodo',\App\Http\Controllers\Todolist\AddTodoController::class)
+    ->name('addtodo');
 
-Route::get('restoretodo', App\Http\Controllers\Todolist\RestoreTodo::class)
-->name('restoretodo');
-
-Route::get('userinfo', App\Http\Controllers\Todolist\UserInfoController::class)
-->name('userinfo');
+    Route::get('edittodo-page/{todoId}', \App\Http\Controllers\Todolist\EditTodoPageController::class)
+    ->name('edittodo-page')->where('todoId', '[0-9]+');
+    
+    Route::put('todo/edittodo/{todoId}', \App\Http\Controllers\Todolist\EditTodoController::class)
+    ->name('edittodo')->where('todoId', '[0-9]+');
+    
+    Route::get('restoretodo', App\Http\Controllers\Todolist\RestoreTodo::class)
+    ->name('restoretodo');
+    
+    Route::get('userinfo', App\Http\Controllers\Todolist\UserInfoController::class)
+    ->name('userinfo');
+    
+    Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
+    ->name('userlist');
+});
 
 require __DIR__.'/auth.php';
