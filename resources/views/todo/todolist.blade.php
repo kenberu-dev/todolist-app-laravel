@@ -6,7 +6,7 @@
     <x-layout.todolist-single>
             <ul class=" font-medium justify-start w-max">
                 <li class="flex sticky top-10 mb-4 lg:col-span-1 items-center text-xl bg-gray-100 border-b-4 border-gray-500">
-                    <div class="flex ml-4 w-12">
+                    <div class="flex ml-4 w-10">
                     </div>
                     <div class="flex ml-3 w-96">
                         「{{ $user_name }}」さんのTodo
