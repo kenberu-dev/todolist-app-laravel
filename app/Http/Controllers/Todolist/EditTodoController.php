@@ -3,15 +3,21 @@
 namespace App\Http\Controllers\Todolist;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Todolist\EditTodoRequest;
+use App\Models\Todolist;
 
 class EditTodoController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(EditTodoRequest $request)
     {
-        
+        $todo = Todolist::where('id', $request->id())->firstOrFail();
+        $todo->content  = $request->content();
+        $todo->deadline = $request->deadline();
+        $todo->save();
+        return redirect()
+                ->route('todolist');
     }
 }

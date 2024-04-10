@@ -12,7 +12,7 @@
         </h1>
         <nav class="flex-auto">
             <ul class="flex text-xl uppercase list-none justify-end">
-              <li class="ml-9 mr-3 hover:text-green-600"><a href="userinfo">アカウント情報</a></li>
+              <li class="ml-9 mr-3 hover:text-green-600"><a href="userinfo-page">アカウント情報</a></li>
               <li class="ml-9 mr-3 hover:text-green-600"><a href="todolist-app">ログアウト</a></li>
             </ul>
           </nav>

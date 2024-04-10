@@ -26,6 +26,9 @@ Route::get('adminlogin', App\Http\Controllers\Todolist\AdminloginController::cla
 Route::middleware('auth')->group(function (){
     Route::get('todolist', \App\Http\Controllers\Todolist\TodolistController::class)
     ->name('todolist');
+
+    Route::put('todo/checktodo/{todoId}', \App\Http\Controllers\Todolist\CheckTodoController::class)
+    ->name('checktodo')->where('todoId', '[0-9]+');
     
     Route::get('addtodo-page',\App\Http\Controllers\Todolist\AddTodoPageController::class)
     ->name('addtodo-page');
@@ -39,14 +42,23 @@ Route::middleware('auth')->group(function (){
     Route::put('todo/edittodo/{todoId}', \App\Http\Controllers\Todolist\EditTodoController::class)
     ->name('edittodo')->where('todoId', '[0-9]+');
     
-    Route::get('restoretodo', App\Http\Controllers\Todolist\RestoreTodo::class)
-    ->name('restoretodo');
+    Route::get('restoretodo-page', App\Http\Controllers\Todolist\RestoreTodoPageContorller::class)
+    ->name('restoretodo-page');
+
+    Route::put('todo/restoretodo/{todoId}', \App\Http\Controllers\Todolist\RestoreTodoContorller::class)
+    ->name('restoretodo')->where('todoId', '[0-9]+');
+
+    Route::delete('todo/delete/{todoId}', \App\Http\Controllers\Todolist\DeleteTodoController::class)
+    ->name('deletetodo');
     
-    Route::get('userinfo', App\Http\Controllers\Todolist\UserInfoController::class)
-    ->name('userinfo');
+    Route::get('userinfo-page', App\Http\Controllers\Todolist\UserInfoController::class)
+    ->name('userinfo-page');
     
     Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
     ->name('userlist');
 });
+
+Route::delete('user/delete', \App\Http\Controllers\Todolist\WithdrawalController::class)
+->name('withdrawal');
 
 require __DIR__.'/auth.php';

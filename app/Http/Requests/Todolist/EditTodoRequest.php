@@ -26,6 +26,9 @@ class EditTodoRequest extends FormRequest
             'deadline' => 'required|date',
         ];
     }
+    public function id(): int {
+        return (int) $this->route('todoId');
+    }
 
     public function content(): string {
         return $this->input('content');
