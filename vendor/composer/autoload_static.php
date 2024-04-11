@@ -90,6 +90,7 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Clock\\' => 24,
+            'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
@@ -190,6 +191,8 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         ),
         'A' => 
         array (
+            'Askdkc\\Breezejp\\Database\\Factories\\' => 35,
+            'Askdkc\\Breezejp\\' => 16,
             'ArchTech\\Enums\\' => 15,
             'App\\' => 4,
         ),
@@ -339,6 +342,10 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         'Symfony\\Component\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/clock',
+        ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
@@ -589,6 +596,14 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Askdkc\\Breezejp\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/askdkc/breezejp/database/factories',
+        ),
+        'Askdkc\\Breezejp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/askdkc/breezejp/src',
+        ),
         'ArchTech\\Enums\\' => 
         array (
             0 => __DIR__ . '/..' . '/archtechx/enums/src',
@@ -615,15 +630,21 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         'App\\Http\\Controllers\\Todolist\\AddTodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/AddTodoController.php',
         'App\\Http\\Controllers\\Todolist\\AddTodoPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/AddTodoPageController.php',
         'App\\Http\\Controllers\\Todolist\\AdminloginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/AdminloginController.php',
+        'App\\Http\\Controllers\\Todolist\\CheckTodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/CheckTodoController.php',
+        'App\\Http\\Controllers\\Todolist\\DeleteTodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/DeleteTodoController.php',
         'App\\Http\\Controllers\\Todolist\\EditTodoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/EditTodoController.php',
+        'App\\Http\\Controllers\\Todolist\\EditTodoPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/EditTodoPageController.php',
         'App\\Http\\Controllers\\Todolist\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/IndexController.php',
-        'App\\Http\\Controllers\\Todolist\\RestoreTodo' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/RestoreTodo.php',
+        'App\\Http\\Controllers\\Todolist\\RestoreTodoContorller' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/RestoreTodoContorller.php',
+        'App\\Http\\Controllers\\Todolist\\RestoreTodoPageContorller' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/RestoreTodoPageContorller.php',
         'App\\Http\\Controllers\\Todolist\\TodolistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/TodolistController.php',
         'App\\Http\\Controllers\\Todolist\\UserInfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/UserInfoController.php',
         'App\\Http\\Controllers\\Todolist\\UserlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/UserlistController.php',
+        'App\\Http\\Controllers\\Todolist\\WithdrawalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Todolist/WithdrawalController.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Http\\Requests\\Todolist\\AddTodoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Todolist/AddTodoRequest.php',
+        'App\\Http\\Requests\\Todolist\\EditTodoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Todolist/EditTodoRequest.php',
         'App\\Models\\Todolist' => __DIR__ . '/../..' . '/app/Models/Todolist.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -642,6 +663,11 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         'ArchTech\\Enums\\PHPStan\\InvokableCases\\ReflectionExtension' => __DIR__ . '/..' . '/archtechx/enums/src/PHPStan/InvokableCases/ReflectionExtension.php',
         'ArchTech\\Enums\\PHPStan\\InvokableCases\\StaticInvokableCaseMethodReflection' => __DIR__ . '/..' . '/archtechx/enums/src/PHPStan/InvokableCases/StaticInvokableCaseMethodReflection.php',
         'ArchTech\\Enums\\Values' => __DIR__ . '/..' . '/archtechx/enums/src/Values.php',
+        'Askdkc\\Breezejp\\Breezejp' => __DIR__ . '/..' . '/askdkc/breezejp/src/Breezejp.php',
+        'Askdkc\\Breezejp\\BreezejpServiceProvider' => __DIR__ . '/..' . '/askdkc/breezejp/src/BreezejpServiceProvider.php',
+        'Askdkc\\Breezejp\\Commands\\BreezejpCommand' => __DIR__ . '/..' . '/askdkc/breezejp/src/Commands/BreezejpCommand.php',
+        'Askdkc\\Breezejp\\Commands\\InstallLanguageSwitcher' => __DIR__ . '/..' . '/askdkc/breezejp/src/Commands/InstallLanguageSwitcher.php',
+        'Askdkc\\Breezejp\\Facades\\Breezejp' => __DIR__ . '/..' . '/askdkc/breezejp/src/Facades/Breezejp.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -5840,6 +5866,10 @@ class ComposerStaticInit968f73bcf5520ee401d641d0d79555ec
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\LaravelPackageTools\\Commands\\InstallCommand' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Commands/InstallCommand.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Clock\\Clock' => __DIR__ . '/..' . '/symfony/clock/Clock.php',
         'Symfony\\Component\\Clock\\ClockAwareTrait' => __DIR__ . '/..' . '/symfony/clock/ClockAwareTrait.php',
