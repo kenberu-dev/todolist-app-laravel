@@ -7,6 +7,18 @@
                 <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
               </svg>          
         </h1>
+        <nav class="flex-auto">
+            <ul class="flex mr-3 text-xl uppercase list-none justify-end">
+              <li class="ml-3 hover:text-gray-600">
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <button onclick="event.preventDefault(); this.closest('form').submit();">
+                        ログアウト
+                    </button>
+                </form>
+              </li>
+            </ul>
+        </nav>
     </header>
     <div class="flex w-full justify-center items-center flex-grow py-10">
         <div class="max-w-screen-lg w-auto">

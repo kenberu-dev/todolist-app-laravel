@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+// use \App\Http\Controllers\Todolist\Admin\AdminRegisterController;
+// use \App\Http\Controllers\Todolist\Admin\AdminLoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,11 +19,35 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Route::group(['prefix' => 'admin'], function () {
+//     // 登録
+//     Route::get('register', [AdminRegisterController::class, 'create'])
+//         ->name('admin.register');
+
+//     Route::post('register', [AdminRegisterController::class, 'store']);
+
+//     // ログイン
+//     Route::get('login', [AdminLoginController::class, 'showLoginPage'])
+//         ->name('admin.login');
+
+//     Route::post('login', [AdminLoginController::class, 'login']);
+
+//     // 以下の中は認証必須のエンドポイントとなる
+//     Route::middleware(['auth:admin'])->group(function () {
+//         Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
+//         ->name('userlist');
+
+//         Route::delete('deleteuser/{userId}', \App\Http\Controllers\Todolist\DeleteUserController::class)
+//         ->name('deleteuser')->where('userId', '[0-9]+');
+
+//         Route::post('logout', AdminLoginController::class, 'destroy')
+//         ->name('admin.logout');
+
+//     });
+// });
+
 Route::get('/todolist-app', \App\Http\Controllers\Todolist\IndexController::class)
 ->name('index');
-
-Route::get('adminlogin', App\Http\Controllers\Todolist\AdminloginController::class)
-->name('adminlogin');
 
 Route::middleware('auth')->group(function (){
     Route::get('todolist', \App\Http\Controllers\Todolist\TodolistController::class)
@@ -49,13 +75,10 @@ Route::middleware('auth')->group(function (){
     ->name('restoretodo')->where('todoId', '[0-9]+');
 
     Route::delete('todo/delete/{todoId}', \App\Http\Controllers\Todolist\DeleteTodoController::class)
-    ->name('deletetodo');
+    ->name('deletetodo')->where('todoId', '[0-9]+');
     
     Route::get('userinfo-page', App\Http\Controllers\Todolist\UserInfoController::class)
     ->name('userinfo-page');
-    
-    Route::get('userlist', App\Http\Controllers\Todolist\UserlistController::class)
-    ->name('userlist');
 });
 
 Route::delete('user/delete', \App\Http\Controllers\Todolist\WithdrawalController::class)
